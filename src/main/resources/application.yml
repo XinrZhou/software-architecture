@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: jdbc:mysql://114.116.203.165:3306/2020222832
+    username: 2020222832
+    password: 2020222832
+  sql:
+    init:
+      mode: always
+
+logging:
+  level:
+    com:
+      example: debug
+    sql: debug
+  pattern:
+    console: '%-5level %c.%M[%line] - %msg%n'
