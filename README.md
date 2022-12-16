@@ -25,3 +25,20 @@
 @Id
 private Integer id;
 ```
+
+### 实验二 管道过滤器实验
+1. 用户单点登录：服务器基于自定义算法生成一个token，返给用户
+2. 业务层获取单个用户：getUser()，获取多个用户：listUsers()
+3. 自定义异常 
+* 创建异常类，用于处理异常
+* 异常抛给了Spring的容器
+4. Controller如何完成测试？创建一个http的测试脚本进行测试
+5. 水平权限验证：用户携带身份发请求时，不能把身份信息放在地址栏中，信息应该从token中解密后注入
+6. REST风格：URL中只使用名词来定位资源，用HTTP协议里的动词（GET、POST、PUT、DELETE）来实现资源的增删改查操作
+7. POST请求：不通过地址栏传参，数据放在请求体中
+8. 拦截器
+```        
+registry.addInterceptor(loginInterceptor)
+        .addPathPatterns("/api/**")
+        .excludePathPatterns("/api/login")
+```
